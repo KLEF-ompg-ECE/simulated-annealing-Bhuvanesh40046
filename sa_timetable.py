@@ -219,19 +219,58 @@ if __name__ == "__main__":
     save_plot(clash_log, temp_log,
               "plots/experiment_1.png", "Baseline  cooling_rate=0.995")
 
-    # ==========================================================================
-    # EXPERIMENT 2 - Effect of Cooling Rate
-    # TODO: Copy this block THREE times below (for 0.80, 0.95, and 0.995).
-    #       Change cooling_rate and the plot filename each time.
-    #       Record results in README.md.
-    # ==========================================================================
+# ==================================================================
+# EXPERIMENT 2A - cooling_rate = 0.80
+# ==================================================================
 
-    # --- Copy and edit below this line ---
+tt2, clashes2, cl2, tl2 = run_sa(
+    initial_temp=100.0, cooling_rate=0.80,
+    min_temp=0.1, max_iterations=5000, seed=42
+)
 
-    # tt2, clashes2, cl2, tl2 = run_sa(
-    #     initial_temp=100.0, cooling_rate=0.80,    # <- change this
-    #     min_temp=0.1, max_iterations=5000, seed=42
-    # )
-    # print_timetable(tt2)
-    # print(f"  Final clashes : {clashes2}")
-    # save_plot(cl2, tl2, "plots/experiment_2a.png", "cooling_rate=0.80")   # <- change filename
+print("\n================================================")
+print("  EXPERIMENT 2A - cooling_rate = 0.80")
+print("================================================")
+
+print_timetable(tt2)
+print(f"  Final clashes : {clashes2}")
+
+save_plot(cl2, tl2, "plots/experiment_2a.png", "cooling_rate=0.80")
+
+
+# ==================================================================
+# EXPERIMENT 2B - cooling_rate = 0.95
+# ==================================================================
+
+tt3, clashes3, cl3, tl3 = run_sa(
+    initial_temp=100.0, cooling_rate=0.95,
+    min_temp=0.1, max_iterations=5000, seed=42
+)
+
+print("\n================================================")
+print("  EXPERIMENT 2B - cooling_rate = 0.95")
+print("================================================")
+
+print_timetable(tt3)
+print(f"  Final clashes : {clashes3}")
+
+save_plot(cl3, tl3, "plots/experiment_2b.png", "cooling_rate=0.95")
+
+
+# ==================================================================
+# EXPERIMENT 2C - cooling_rate = 0.995
+# ==================================================================
+
+tt4, clashes4, cl4, tl4 = run_sa(
+    initial_temp=100.0, cooling_rate=0.995,
+    min_temp=0.1, max_iterations=5000, seed=42
+)
+
+print("\n================================================")
+print("  EXPERIMENT 2C - cooling_rate = 0.995")
+print("================================================")
+
+print_timetable(tt4)
+print(f"  Final clashes : {clashes4}")
+
+save_plot(cl4, tl4, "plots/experiment_2c.png", "cooling_rate=0.995")
